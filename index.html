@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo Santarsiere — Corralón de Materiales | Ituzaingó</title>
+<meta name="description" content="Corralón de materiales de construcción en Ituzaingó. Áridos, ladrillos, hierros, bolsas, sanitarios y más. Atención a particulares y constructoras.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --rojo:#D85A30;
+  --rojo-dark:#993C1D;
+  --negro:#1A1A18;
+  --gris-bg:#F5F4F0;
+  --gris-border:#E0DED8;
+  --text:#1A1A18;
+  --text-muted:#6B6B68;
+  --white:#FFFFFF;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;color:var(--text);background:var(--white);}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--negro);padding:7px 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+.topbar-left{font-size:12px;color:rgba(255,255,255,.6);}
+.topbar-left a{color:var(--rojo);font-weight:700;text-decoration:none;}
+.topbar-right{display:flex;gap:16px;}
+.topbar-right a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;}
+.topbar-right a:hover{color:#fff;}
+
+/* ── HEADER ── */
+.header{background:#fff;border-bottom:1px solid var(--gris-border);padding:.8rem 1.5rem;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.logo{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:var(--negro);letter-spacing:-1px;text-decoration:none;flex-shrink:0;}
+.logo span{color:var(--rojo);}
+.searchbar{flex:1;min-width:200px;display:flex;border:1.5px solid var(--gris-border);border-radius:6px;overflow:hidden;transition:border-color .2s;}
+.searchbar:focus-within{border-color:var(--rojo);}
+.searchbar input{flex:1;border:none;outline:none;padding:9px 14px;font-family:'Barlow',sans-serif;font-size:13px;color:var(--text);background:transparent;}
+.searchbar button{background:var(--rojo);color:#fff;border:none;padding:9px 16px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Barlow',sans-serif;letter-spacing:.5px;}
+.header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.h-link{font-size:12px;color:var(--text-muted);text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;}
+.h-link svg{width:18px;height:18px;stroke:var(--text-muted);}
+.h-link:hover{color:var(--rojo);}
+.h-link:hover svg{stroke:var(--rojo);}
+.wpp-header{background:#25D366;color:#fff;border:none;padding:9px 16px;border-radius:6px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;text-decoration:none;}
+
+/* ── CATNAV ── */
+.catnav{background:var(--rojo);overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.catnav::-webkit-scrollbar{height:3px;}
+.catnav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);}
+.catnav-inner{max-width:1100px;margin:0 auto;display:flex;padding:0 1.5rem;}
+.catnav-item{color:rgba(255,255,255,.85);font-size:13px;font-weight:600;padding:11px 14px;cursor:pointer;white-space:nowrap;text-decoration:none;display:block;transition:background .15s;}
+.catnav-item:hover{background:rgba(0,0,0,.15);color:#fff;}
+
+/* ── HERO ── */
+.hero{background:var(--negro);padding:3rem 1.5rem;}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center;}
+.hero-tag{display:inline-block;background:rgba(216,90,48,.25);color:#F0997B;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:3px;margin-bottom:1rem;}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:800;line-height:.95;color:#fff;margin-bottom:.75rem;letter-spacing:-1px;}
+.hero-title span{color:var(--rojo);}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:1.75rem;max-width:380px;}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-rojo{background:var(--rojo);color:#fff;border:none;padding:11px 22px;font-family:'Barlow',sans-serif;font-size:13px;font-weight:700;border-radius:5px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s;}
+.btn-rojo:hover{background:var(--rojo-dark);}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25);padding:10px 20px;font-family:'Barlow',sans-serif;font-size:13px;border-radius:5px;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.6);}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.stat-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1.25rem;text-align:center;}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:800;color:var(--rojo);line-height:1;}
+.stat-label{font-size:11px;color:rgba(255,255,255,.45);margin-top:4px;line-height:1.4;}
+
+/* ── STRIP ── */
+.strip{background:var(--rojo);}
+.strip-inner{max-width:1100px;margin:0 auto;padding:.7rem 1.5rem;display:flex;justify-content:space-around;flex-wrap:wrap;gap:8px;}
+.strip-item{color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px;}
+.strip-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.4);flex-shrink:0;}
+
+/* ── DESCUENTO BANNER ── */
+.desc-banner{background:#1a1a18;border-left:4px solid var(--rojo);}
+.desc-banner-inner{max-width:1100px;margin:0 auto;padding:.9rem 1.5rem;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.desc-badge{background:var(--rojo);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;padding:4px 12px;border-radius:4px;flex-shrink:0;}
+.desc-text{font-size:13px;color:rgba(255,255,255,.8);}
+.desc-text strong{color:#fff;}
+
+/* ── MAIN LAYOUT ── */
+.main{max-width:1100px;margin:0 auto;padding:0 1.5rem;}
+.section{padding:2rem 0;}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;border-bottom:2px solid var(--rojo);padding-bottom:.6rem;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;color:var(--negro);}
+.section-more{font-size:12px;color:var(--rojo);font-weight:600;text-decoration:none;cursor:pointer;}
+
+/* ── CATEGORÍAS ── */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;}
+.cat-card{background:var(--white);border:1px solid var(--gris-border);border-radius:10px;padding:1rem .75rem;text-align:center;cursor:pointer;transition:border-color .2s,transform .15s;text-decoration:none;display:block;}
+.cat-card:hover{border-color:var(--rojo);transform:translateY(-2px);}
+.cat-icon{font-size:28px;margin-bottom:6px;display:block;}
+.cat-name{font-size:11px;font-weight:600;color:var(--text);line-height:1.3;}
+
+/* ── PRODUCTOS ── */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:12px;}
+.prod-card{background:var(--white);border:1px solid var(--gris-border);border-radius:10px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
+.prod-card:hover{border-color:var(--rojo);box-shadow:0 4px 16px rgba(216,90,48,.12);}
+.prod-thumb{width:100%;height:150px;background:var(--gris-bg);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--gris-border);overflow:hidden;padding:8px;}.prod-thumb img{width:100%;height:100%;object-fit:contain;object-position:center;transition:transform .3s;}.prod-card:hover .prod-thumb img{transform:scale(1.05);}
+.prod-body{padding:12px;}
+.prod-name{font-size:12px;font-weight:500;color:var(--text);line-height:1.45;min-height:36px;margin-bottom:8px;}
+.prod-unit{font-size:10px;color:var(--text-muted);margin-bottom:4px;}
+.prod-price{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;color:var(--rojo);line-height:1;}
+.prod-efec{font-size:11px;color:#27500A;font-weight:600;background:#EAF3DE;padding:2px 7px;border-radius:3px;margin-top:6px;display:inline-block;}
+.prod-btn{width:100%;background:var(--negro);color:#fff;border:none;padding:8px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;cursor:pointer;margin-top:10px;border-radius:5px;transition:background .2s;}
+.prod-btn:hover{background:var(--rojo);}
+.prod-verificar{background:#FFF3CD;border:1px solid #F5C4B3;border-radius:10px;overflow:hidden;}
+.prod-verificar .prod-price{color:#856404;font-size:16px;}
+
+/* ── PROMO BANNER ── */
+.promo{background:var(--negro);border-radius:12px;padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin:1rem 0;}
+.promo-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--rojo);margin-bottom:6px;}
+.promo-title{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;color:#fff;margin-bottom:4px;}
+.promo-sub{font-size:12px;color:rgba(255,255,255,.5);}
+
+/* ── TABLA DE PRODUCTOS (vista lista) ── */
+.prod-table{width:100%;border-collapse:collapse;}
+.prod-table thead tr{background:var(--rojo);}
+.prod-table thead th{padding:10px 12px;font-size:11px;font-weight:700;color:#fff;text-align:left;letter-spacing:.5px;}
+.prod-table thead th:last-child,.prod-table thead th:nth-child(3),.prod-table thead th:nth-child(4){text-align:right;}
+.prod-table tbody tr:nth-child(even){background:var(--gris-bg);}
+.prod-table tbody tr:hover{background:#FAE8E0;}
+.prod-table td{padding:9px 12px;font-size:13px;color:var(--text);border-bottom:1px solid var(--gris-border);}
+.prod-table td.price{text-align:right;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:var(--rojo);}
+.prod-table td.efec{text-align:right;font-size:12px;font-weight:600;color:#27500A;}
+.prod-table td.unit{text-align:right;font-size:11px;color:var(--text-muted);}
+.verificar-row{background:#FFF3CD !important;}
+.verificar-row td{color:#856404;}
+
+/* ── MARCAS ── */
+.marcas-section{background:var(--gris-bg);padding:2rem 1.5rem;}
+.marcas-inner{max-width:1100px;margin:0 auto;}
+.marcas-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem;justify-content:center;}
+.marca-pill{background:#fff;border:1px solid var(--gris-border);border-radius:20px;padding:7px 18px;font-size:12px;font-weight:700;color:var(--text-muted);transition:border-color .2s;}
+.marca-pill:hover{border-color:var(--rojo);color:var(--rojo);}
+
+/* ── CONTACTO ── */
+.contacto-section{padding:2rem 1.5rem;background:#fff;}
+.contacto-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
+.contacto-card{background:var(--gris-bg);border-radius:10px;padding:1.5rem;}
+.contacto-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-bottom:8px;}
+.contacto-val{font-size:14px;color:var(--text);line-height:1.8;}
+.wpp-block{background:#25D366;border-radius:10px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:14px;cursor:pointer;margin-top:12px;text-decoration:none;}
+.wpp-block-text .title{font-weight:700;font-size:15px;color:#fff;}
+.wpp-block-text .sub{font-size:12px;color:rgba(255,255,255,.8);}
+.cotizacion-form{background:var(--negro);border-radius:12px;padding:1.75rem;}
+.form-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:4px;}
+.form-sub{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:1.25rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+.form-input{width:100%;padding:10px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:#fff;font-family:'Barlow',sans-serif;font-size:13px;}
+.form-input::placeholder{color:rgba(255,255,255,.3);}
+.form-input:focus{outline:none;border-color:var(--rojo);}
+.form-textarea{width:100%;padding:10px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:#fff;font-family:'Barlow',sans-serif;font-size:13px;resize:vertical;min-height:80px;margin-bottom:10px;}
+.form-textarea::placeholder{color:rgba(255,255,255,.3);}
+.form-textarea:focus{outline:none;border-color:var(--rojo);}
+.form-submit{width:100%;background:var(--rojo);color:#fff;border:none;padding:12px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:700;border-radius:6px;cursor:pointer;transition:background .2s;}
+.form-submit:hover{background:var(--rojo-dark);}
+
+/* ── FOOTER ── */
+.footer{background:var(--negro);padding:2rem 1.5rem;}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;}
+.footer-logo{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:#fff;margin-bottom:8px;}
+.footer-logo span{color:var(--rojo);}
+.footer-desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7;}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.4);margin-bottom:12px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;}
+.footer-links a:hover{color:#fff;}
+.footer-bottom{max-width:1100px;margin:.2rem auto 0;padding-top:1rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.25);}
+
+/* ── TOGGLE VISTA ── */
+.vista-toggle{display:flex;gap:6px;align-items:center;}
+.vista-btn{background:transparent;border:1px solid var(--gris-border);padding:5px 10px;border-radius:4px;cursor:pointer;font-size:11px;color:var(--text-muted);}
+.vista-btn.active{background:var(--rojo);color:#fff;border-color:var(--rojo);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-stats{display:none;}
+  .hero-title{font-size:40px;}
+  .contacto-inner{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">Llamanos o WhatsApp: <a href="tel:+5491164792794">+54 9 11 6479-2794</a></div>
+  <div class="topbar-right">
+    <a href="#cotizacion">Pedir cotización</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#categorias">Categorías</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">GRUPO <span>SANTARSIERE</span></a>
+    <div class="searchbar">
+      <input type="text" placeholder="Buscá un producto... (arena, cemento, varilla...)" id="search-input">
+      <button onclick="buscar()">Buscar</button>
+    </div>
+    <div class="header-actions">
+      <a href="#contacto" class="h-link">
+        <svg fill="none" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Ubicación
+      </a>
+      <a href="https://wa.me/5491164792794" class="wpp-header" target="_blank">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.555 9.555 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.523 5.845L.057 23.428a.5.5 0 00.614.614l5.556-1.461A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.515-5.228-1.411l-.374-.22-3.896 1.024 1.03-3.788-.242-.392A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- CATNAV -->
+<nav class="catnav">
+  <div class="catnav-inner">
+    <a class="catnav-item" href="#aridos">Áridos</a>
+    <a class="catnav-item" href="#bolsas">Bolsas</a>
+    <a class="catnav-item" href="#ladrillos">Ladrillos y Huecos</a>
+    <a class="catnav-item" href="#hierros">Hierros</a>
+    <a class="catnav-item" href="#impermeabilizantes">Impermeabilizantes</a>
+    <a class="catnav-item" href="#clavos">Clavos y Alambres</a>
+    <a class="catnav-item" href="#vigas">Vigas</a>
+    <a class="catnav-item" href="#cotizacion">Cotización</a>
+    <a class="catnav-item" href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Merlo Norte · GBA Oeste</div>
+      <h1 class="hero-title">TODO PARA<br>TU <span>OBRA</span></h1>
+      <p class="hero-sub">Materiales de construcción para particulares, contratistas y constructoras. Stock permanente, precios actualizados y atención inmediata.</p>
+      <div class="hero-btns">
+        <a href="#categorias" class="btn-rojo">Ver productos</a>
+        <a href="#cotizacion" class="btn-ghost">Pedir cotización</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-num">+20</div><div class="stat-label">Años de trayectoria en la zona</div></div>
+      <div class="stat-card"><div class="stat-num">15%</div><div class="stat-label">Descuento pagando en efectivo</div></div>
+      <div class="stat-card"><div class="stat-num">7</div><div class="stat-label">Categorías de productos</div></div>
+      <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">Tipos de clientes atendidos</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item"><div class="strip-dot"></div>Stock siempre disponible</div>
+    <div class="strip-item"><div class="strip-dot"></div>Precios actualizados semanalmente</div>
+    <div class="strip-item"><div class="strip-dot"></div>Atención por WhatsApp</div>
+    <div class="strip-item"><div class="strip-dot"></div>Particular y contratista</div>
+    <div class="strip-item"><div class="strip-dot"></div>Factura A y B</div>
+  </div>
+</div>
+
+<!-- DESCUENTO BANNER -->
+<div class="desc-banner">
+  <div class="desc-banner-inner">
+    <div class="desc-badge">15% OFF</div>
+    <div class="desc-text">Todos los precios incluyen <strong>IVA y factura</strong>. Pagando en <strong>efectivo</strong> aplicamos un descuento del <strong>15% automático</strong>.</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- CATEGORÍAS -->
+  <section class="section" id="categorias">
+    <div class="section-head">
+      <h2 class="section-title">Categorías</h2>
+    </div>
+    <div class="cat-grid">
+      <a href="#aridos" class="cat-card"><div class="cat-thumb"><img src="imágenes/arena.webp" alt="Áridos"></div><span class="cat-name">Áridos</span></a>
+      <a href="#bolsas" class="cat-card"><div class="cat-thumb"><img src="imágenes/cemento.webp" alt="Bolsas"></div><span class="cat-name">Bolsas</span></a>
+      <a href="#ladrillos" class="cat-card"><div class="cat-thumb"><img src="imágenes/ladrillo comun 2.webp" alt="Ladrillos"></div><span class="cat-name">Ladrillos y Huecos</span></a>
+      <a href="#hierros" class="cat-card"><div class="cat-thumb"><img src="imágenes/varilla4al12.webp" alt="Hierros"></div><span class="cat-name">Hierros y Mallas</span></a>
+      <a href="#impermeabilizantes" class="cat-card"><div class="cat-thumb"><img src="imágenes/cerecita 10kg.webp" alt="Impermeabilizantes"></div><span class="cat-name">Impermeabilizantes</span></a>
+      <a href="#clavos" class="cat-card"><div class="cat-thumb"><img src="imágenes/clavos 1.webp" alt="Clavos"></div><span class="cat-name">Clavos y Alambres</span></a>
+      <a href="#vigas" class="cat-card"><div class="cat-thumb"><img src="imágenes/vigas 3.webp" alt="Vigas"></div><span class="cat-name">Vigas Pretensadas</span></a>
+    </div>
+  </section>
+
+  <!-- ── ÁRIDOS ── -->
+  <section class="section" id="aridos">
+    <div class="section-head">
+      <h2 class="section-title">Áridos</h2>
+      <div class="vista-toggle">
+        <button class="vista-btn active" onclick="setVista('aridos','grid',this)">Tarjetas</button>
+        <button class="vista-btn" onclick="setVista('aridos','list',this)">Lista</button>
+      </div>
+    </div>
+    <div id="aridos-grid" class="prod-grid">
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/arena.webp" alt="Arena 1 MTS"></div><div class="prod-body"><div class="prod-unit">Arena</div><div class="prod-name">Arena — 1 MTS (90 baldes)</div><div class="prod-price">$43.000</div><div class="prod-efec">Efectivo: $36.550</div><button class="prod-btn" onclick="wpp('Arena 1 MTS')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/arena.webp" alt="Bolsón Arena"></div><div class="prod-body"><div class="prod-unit">Arena</div><div class="prod-name">Arena — Bolsón</div><div class="prod-price">$40.000</div><div class="prod-efec">Efectivo: $34.000</div><button class="prod-btn" onclick="wpp('Arena Bolsón')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/arena.webp" alt="Arena 1/2 MTS"></div><div class="prod-body"><div class="prod-unit">Arena</div><div class="prod-name">Arena — 1/2 MTS (45 baldes)</div><div class="prod-price">$25.000</div><div class="prod-efec">Efectivo: $21.250</div><button class="prod-btn" onclick="wpp('Arena 1/2 MTS')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/bolsa de arena chica.webp" alt="Arena 1/4 MTS"></div><div class="prod-body"><div class="prod-unit">Arena</div><div class="prod-name">Arena — 1/4 MTS</div><div class="prod-price">$16.000</div><div class="prod-efec">Efectivo: $13.600</div><button class="prod-btn" onclick="wpp('Arena 1/4 MTS')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/bolsa de arena chica.webp" alt="Bolsa Arena"></div><div class="prod-body"><div class="prod-unit">Arena</div><div class="prod-name">Arena — Bolsa</div><div class="prod-price">$3.000</div><div class="prod-efec">Efectivo: $2.550</div><button class="prod-btn" onclick="wpp('Arena Bolsa')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/bolson piedra.webp" alt="Piedra 1 MTS"></div><div class="prod-body"><div class="prod-unit">Piedra</div><div class="prod-name">Piedra — 1 MTS</div><div class="prod-price">$86.000</div><div class="prod-efec">Efectivo: $73.100</div><button class="prod-btn" onclick="wpp('Piedra 1 MTS')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/bolson piedra.webp" alt="Bolsón Piedra"></div><div class="prod-body"><div class="prod-unit">Piedra</div><div class="prod-name">Piedra — Bolsón</div><div class="prod-price">$75.000</div><div class="prod-efec">Efectivo: $63.750</div><button class="prod-btn" onclick="wpp('Piedra Bolsón')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/piedra.webp" alt="Piedra 1/2 MT"></div><div class="prod-body"><div class="prod-unit">Piedra</div><div class="prod-name">Piedra — 1/2 MT</div><div class="prod-price">$45.000</div><div class="prod-efec">Efectivo: $38.250</div><button class="prod-btn" onclick="wpp('Piedra 1/2 MT')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/bolsa chica piedra.webp" alt="Bolsa Piedra"></div><div class="prod-body"><div class="prod-unit">Piedra</div><div class="prod-name">Piedra — Bolsa</div><div class="prod-price">$5.500</div><div class="prod-efec">Efectivo: $4.675</div><button class="prod-btn" onclick="wpp('Piedra Bolsa')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/bolson cascote.webp" alt="Picado 1 MTS"></div><div class="prod-body"><div class="prod-unit">Picado</div><div class="prod-name">Picado — 1 MTS</div><div class="prod-price">$37.000</div><div class="prod-efec">Efectivo: $31.450</div><button class="prod-btn" onclick="wpp('Picado 1 MTS')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/bolson cascote.webp" alt="Bolsón Picado"></div><div class="prod-body"><div class="prod-unit">Picado</div><div class="prod-name">Picado — Bolsón</div><div class="prod-price">$32.000</div><div class="prod-efec">Efectivo: $27.200</div><button class="prod-btn" onclick="wpp('Picado Bolsón')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/granza.webp" alt="Granza"></div><div class="prod-body"><div class="prod-unit">Granza</div><div class="prod-name">Granza — 1 MTS</div><div class="prod-price">$65.000</div><div class="prod-efec">Efectivo: $55.250</div><button class="prod-btn" onclick="wpp('Granza 1 MTS')">Consultar</button></div></div>
+    </div>
+    <div id="aridos-list" style="display:none;overflow-x:auto;">
+      <table class="prod-table">
+        <thead><tr><th>Producto</th><th>Unidad</th><th>Precio c/IVA</th><th>Efectivo (−15%)</th></tr></thead>
+        <tbody>
+          <tr><td>Arena — 1 MTS (90 baldes)</td><td class="unit">MTS</td><td class="price">$43.000</td><td class="efec">$36.550</td></tr>
+          <tr><td>Arena — Bolsón</td><td class="unit">Bolsón</td><td class="price">$40.000</td><td class="efec">$34.000</td></tr>
+          <tr><td>Arena — 1/2 MTS</td><td class="unit">1/2 MTS</td><td class="price">$25.000</td><td class="efec">$21.250</td></tr>
+          <tr><td>Arena — 1/4 MTS</td><td class="unit">1/4 MTS</td><td class="price">$16.000</td><td class="efec">$13.600</td></tr>
+          <tr><td>Arena — Bolsa</td><td class="unit">Bolsa</td><td class="price">$3.000</td><td class="efec">$2.550</td></tr>
+          <tr><td>Piedra — 1 MTS</td><td class="unit">MTS</td><td class="price">$86.000</td><td class="efec">$73.100</td></tr>
+          <tr><td>Piedra — Bolsón</td><td class="unit">Bolsón</td><td class="price">$75.000</td><td class="efec">$63.750</td></tr>
+          <tr><td>Piedra — 1/2 MT</td><td class="unit">1/2 MT</td><td class="price">$45.000</td><td class="efec">$38.250</td></tr>
+          <tr><td>Piedra — Bolsa</td><td class="unit">Bolsa</td><td class="price">$5.500</td><td class="efec">$4.675</td></tr>
+          <tr><td>Picado — 1 MTS</td><td class="unit">MTS</td><td class="price">$37.000</td><td class="efec">$31.450</td></tr>
+          <tr><td>Picado — Bolsón</td><td class="unit">Bolsón</td><td class="price">$32.000</td><td class="efec">$27.200</td></tr>
+          <tr><td>Picado — 1/2 MTS</td><td class="unit">1/2 MTS</td><td class="price">$19.000</td><td class="efec">$16.150</td></tr>
+          <tr><td>Picado — Bolsa</td><td class="unit">Bolsa</td><td class="price">$2.500</td><td class="efec">$2.125</td></tr>
+          <tr><td>Granza — 1 MTS</td><td class="unit">MTS</td><td class="price">$65.000</td><td class="efec">$55.250</td></tr>
+          <tr><td>Granza — 1/2 MTS</td><td class="unit">1/2 MTS</td><td class="price">$35.000</td><td class="efec">$29.750</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── BOLSAS ── -->
+  <section class="section" id="bolsas">
+    <div class="section-head">
+      <h2 class="section-title">Bolsas</h2>
+      <div class="vista-toggle">
+        <button class="vista-btn active" onclick="setVista('bolsas','grid',this)">Tarjetas</button>
+        <button class="vista-btn" onclick="setVista('bolsas','list',this)">Lista</button>
+      </div>
+    </div>
+    <div id="bolsas-grid" class="prod-grid">
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/cemento.webp" alt="Cemento 25kg"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Cemento 25 kg</div><div class="prod-price">$5.500</div><div class="prod-efec">Efectivo: $4.675</div><button class="prod-btn" onclick="wpp('Cemento 25kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/cemento.webp" alt="Cemento 50kg"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Cemento 50 kg</div><div class="prod-price">$7.500</div><div class="prod-efec">Efectivo: $6.375</div><button class="prod-btn" onclick="wpp('Cemento 50kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/cal.webp" alt="Cal Hidrat"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Cal Hidrat 25 kg</div><div class="prod-price">$7.100</div><div class="prod-efec">Efectivo: $6.035</div><button class="prod-btn" onclick="wpp('Cal Hidrat 25kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/cemento.webp" alt="Milagro 25kg"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Milagro 25 kg</div><div class="prod-price">$10.000</div><div class="prod-efec">Efectivo: $8.500</div><button class="prod-btn" onclick="wpp('Milagro 25kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/cal.webp" alt="Cal Albors"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Cal Albors Fino 20 kg</div><div class="prod-price">$18.000</div><div class="prod-efec">Efectivo: $15.300</div><button class="prod-btn" onclick="wpp('Cal Albors 20kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/hidralit.webp" alt="Hiralit 20kg"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Hiralit 20 kg</div><div class="prod-price">$5.900</div><div class="prod-efec">Efectivo: $5.015</div><button class="prod-btn" onclick="wpp('Hiralit 20kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/pegamento weber estandar.webp" alt="Weber Pegamento"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Weber Pegamento</div><div class="prod-price">$12.000</div><div class="prod-efec">Efectivo: $10.200</div><button class="prod-btn" onclick="wpp('Weber Pegamento')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/pegamento weber basico.webp" alt="Weber Impermeable"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Weber Impermeable 30 kg</div><div class="prod-price">$14.000</div><div class="prod-efec">Efectivo: $11.900</div><button class="prod-btn" onclick="wpp('Weber Impermeable')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/hidralit.webp" alt="Yeso 30kg"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Yeso 30 kg</div><div class="prod-price">$17.500</div><div class="prod-efec">Efectivo: $14.875</div><button class="prod-btn" onclick="wpp('Yeso 30kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/fino a la cal interior.webp" alt="Fino Cal Interior"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Fino a la Cal Int. Weber 5 kg</div><div class="prod-price">$12.500</div><div class="prod-efec">Efectivo: $10.625</div><button class="prod-btn" onclick="wpp('Fino Cal Int Weber')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/fino a la cal exterior.webp" alt="Fino Cal Exterior"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Fino a la Cal Ext. Weber 25 kg</div><div class="prod-price">$15.900</div><div class="prod-efec">Efectivo: $13.515</div><button class="prod-btn" onclick="wpp('Fino Cal Ext Weber')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/pegamento weber estandar.webp" alt="Weber Porcelanato"></div><div class="prod-body"><div class="prod-unit">por bolsa</div><div class="prod-name">Weber Porcelanato 25 kg</div><div class="prod-price">$20.000</div><div class="prod-efec">Efectivo: $17.000</div><button class="prod-btn" onclick="wpp('Weber Porcelanato')">Consultar</button></div></div>
+    </div>
+    <div id="bolsas-list" style="display:none;overflow-x:auto;">
+      <table class="prod-table">
+        <thead><tr><th>Producto</th><th>Unidad</th><th>Precio c/IVA</th><th>Efectivo (−15%)</th></tr></thead>
+        <tbody>
+          <tr><td>Cemento 25 kg</td><td class="unit">Bolsa</td><td class="price">$5.500</td><td class="efec">$4.675</td></tr>
+          <tr><td>Cemento 50 kg</td><td class="unit">Bolsa</td><td class="price">$7.500</td><td class="efec">$6.375</td></tr>
+          <tr><td>Cal Hidrat 25 kg</td><td class="unit">Bolsa</td><td class="price">$7.100</td><td class="efec">$6.035</td></tr>
+          <tr><td>Milagro 25 kg</td><td class="unit">Bolsa</td><td class="price">$10.000</td><td class="efec">$8.500</td></tr>
+          <tr><td>Cal Albors Fino 20 kg</td><td class="unit">Bolsa</td><td class="price">$18.000</td><td class="efec">$15.300</td></tr>
+          <tr><td>Hiralit 20 kg</td><td class="unit">Bolsa</td><td class="price">$5.900</td><td class="efec">$5.015</td></tr>
+          <tr><td>Weber Pegamento</td><td class="unit">Bolsa</td><td class="price">$12.000</td><td class="efec">$10.200</td></tr>
+          <tr><td>Weber Impermeable 30 kg</td><td class="unit">Bolsa</td><td class="price">$14.000</td><td class="efec">$11.900</td></tr>
+          <tr><td>Yeso 30 kg</td><td class="unit">Bolsa</td><td class="price">$17.500</td><td class="efec">$14.875</td></tr>
+          <tr><td>Fino a la Cal Int. Weber 5 kg</td><td class="unit">Bolsa</td><td class="price">$12.500</td><td class="efec">$10.625</td></tr>
+          <tr><td>Fino a la Cal Ext. Weber 25 kg</td><td class="unit">Bolsa</td><td class="price">$15.900</td><td class="efec">$13.515</td></tr>
+          <tr><td>Weber Porcelanato 25 kg</td><td class="unit">Bolsa</td><td class="price">$20.000</td><td class="efec">$17.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── LADRILLOS ── -->
+  <section class="section" id="ladrillos">
+    <div class="section-head">
+      <h2 class="section-title">Ladrillos y Huecos</h2>
+      <div class="vista-toggle">
+        <button class="vista-btn active" onclick="setVista('ladrillos','grid',this)">Tarjetas</button>
+        <button class="vista-btn" onclick="setVista('ladrillos','list',this)">Lista</button>
+      </div>
+    </div>
+    <div class="promo" style="margin-bottom:1rem;">
+      <div><div class="promo-label">Precio especial</div><div class="promo-title">Ladrillo Común desde $220 c/u</div><div class="promo-sub">Efectivo: $187 — Consultá por cantidad y precio por pallet</div></div>
+      <a href="#cotizacion" class="btn-rojo">Pedir cotización</a>
+    </div>
+    <div id="ladrillos-grid" class="prod-grid">
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/ladrillo comun 2.webp" alt="Ladrillo Común"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Ladrillo Común</div><div class="prod-price">$260</div><div class="prod-efec">Efectivo: $221</div><button class="prod-btn" onclick="wpp('Ladrillo Común')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/ladrillo vista.webp" alt="Ladrillo Vista"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Ladrillo Vista</div><div class="prod-price">$470</div><div class="prod-efec">Efectivo: $400</div><button class="prod-btn" onclick="wpp('Ladrillo Vista')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/ladrillo cemento 13x19x40.webp" alt="Bloque CTO"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Bloque CTO 13×19×40</div><div class="prod-price">$1.990</div><div class="prod-efec">Efectivo: $1.692</div><button class="prod-btn" onclick="wpp('Bloque CTO 13x19x40')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/hueco del 8.webp" alt="Hueco 8x18x33"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Hueco 8×18×33</div><div class="prod-price">$700</div><div class="prod-efec">Efectivo: $595</div><button class="prod-btn" onclick="wpp('Hueco 8x18x33')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/ladrillo-hueco-12.webp" alt="Hueco 12x18x33"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Hueco 12×18×33 6T</div><div class="prod-price">$810</div><div class="prod-efec">Efectivo: $689</div><button class="prod-btn" onclick="wpp('Hueco 12x18x33 6T')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/hucos 18x18.webp" alt="Hueco 18x18x33"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Hueco 18×18×33</div><div class="prod-price">$1.040</div><div class="prod-efec">Efectivo: $884</div><button class="prod-btn" onclick="wpp('Hueco 18x18x33')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/ladrillo portante 12.webp" alt="Portante"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Portante 12×19×33</div><div class="prod-price">$1.100</div><div class="prod-efec">Efectivo: $935</div><button class="prod-btn" onclick="wpp('Portante 12x19x33')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/bloque telgopor 10 cm.webp" alt="Block Tergopol 10cm"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Block Tergopol 10 cm</div><div class="prod-price">$4.200</div><div class="prod-efec">Efectivo: $3.570</div><button class="prod-btn" onclick="wpp('Block Tergopol 10cm')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/bloque telgopor 12 cm.webp" alt="Block Tergopol 12cm"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Block Tergopol 12 cm</div><div class="prod-price">$5.200</div><div class="prod-efec">Efectivo: $4.420</div><button class="prod-btn" onclick="wpp('Block Tergopol 12cm')">Consultar</button></div></div>
+    </div>
+    <div id="ladrillos-list" style="display:none;overflow-x:auto;">
+      <table class="prod-table">
+        <thead><tr><th>Producto</th><th>Unidad</th><th>Precio c/IVA</th><th>Efectivo (−15%)</th></tr></thead>
+        <tbody>
+          <tr><td>Ladrillo Común</td><td class="unit">Unidad</td><td class="price">$260</td><td class="efec">$221</td></tr>
+          <tr><td>Ladrillo Vista</td><td class="unit">Unidad</td><td class="price">$470</td><td class="efec">$400</td></tr>
+          <tr><td>Bloque CTO 13×19×40</td><td class="unit">Unidad</td><td class="price">$1.990</td><td class="efec">$1.692</td></tr>
+          <tr><td>Hueco 8×18×33</td><td class="unit">Unidad</td><td class="price">$700</td><td class="efec">$595</td></tr>
+          <tr><td>Hueco 12×18×33 6T</td><td class="unit">Unidad</td><td class="price">$810</td><td class="efec">$689</td></tr>
+          <tr><td>Hueco 18×18×33</td><td class="unit">Unidad</td><td class="price">$1.040</td><td class="efec">$884</td></tr>
+          <tr><td>Portante 12×19×33</td><td class="unit">Unidad</td><td class="price">$1.100</td><td class="efec">$935</td></tr>
+          <tr><td>Block Tergopol 10 cm</td><td class="unit">Unidad</td><td class="price">$4.200</td><td class="efec">$3.570</td></tr>
+          <tr><td>Block Tergopol 12 cm</td><td class="unit">Unidad</td><td class="price">$5.200</td><td class="efec">$4.420</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── HIERROS ── -->
+  <section class="section" id="hierros">
+    <div class="section-head">
+      <h2 class="section-title">Hierros y Mallas</h2>
+      <div class="vista-toggle">
+        <button class="vista-btn active" onclick="setVista('hierros','grid',this)">Tarjetas</button>
+        <button class="vista-btn" onclick="setVista('hierros','list',this)">Lista</button>
+      </div>
+    </div>
+    <div id="hierros-grid" class="prod-grid">
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/varilla4al12.webp" alt="Varilla 4.2mm"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Varilla Hierro 4.2 mm</div><div class="prod-price">$4.000</div><div class="prod-efec">Efectivo: $3.400</div><button class="prod-btn" onclick="wpp('Varilla 4.2mm')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/varilla4al12.webp" alt="Varilla 6mm"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Varilla Hierro 6 mm</div><div class="prod-price">$6.700</div><div class="prod-efec">Efectivo: $5.695</div><button class="prod-btn" onclick="wpp('Varilla 6mm')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/varilla4al12.webp" alt="Varilla 8mm"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Varilla Hierro 8 mm</div><div class="prod-price">$12.000</div><div class="prod-efec">Efectivo: $10.200</div><button class="prod-btn" onclick="wpp('Varilla 8mm')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/varilla4al12.webp" alt="Varilla 10mm"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Varilla Hierro 10 mm</div><div class="prod-price">$19.000</div><div class="prod-efec">Efectivo: $16.150</div><button class="prod-btn" onclick="wpp('Varilla 10mm')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/varilla4al12.webp" alt="Varilla 12mm"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Varilla Hierro 12 mm</div><div class="prod-price">$27.000</div><div class="prod-efec">Efectivo: $22.950</div><button class="prod-btn" onclick="wpp('Varilla 12mm')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/malla 1.webp" alt="Malla 4.2"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Malla 4.2 — 5×2 mts</div><div class="prod-price">$26.000</div><div class="prod-efec">Efectivo: $22.100</div><button class="prod-btn" onclick="wpp('Malla 4.2 5x2')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/malla 1.webp" alt="Malla 4.2 3x2"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Malla 4.2 — 3×2 mts 15×25</div><div class="prod-price">$21.000</div><div class="prod-efec">Efectivo: $17.850</div><button class="prod-btn" onclick="wpp('Malla 4.2 3x2')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/mall 2.webp" alt="Malla 5"></div><div class="prod-body"><div class="prod-unit">por unidad</div><div class="prod-name">Malla 5 — 5×2 mts 15×25</div><div class="prod-price">$48.000</div><div class="prod-efec">Efectivo: $40.800</div><button class="prod-btn" onclick="wpp('Malla 5 5x2')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/alambre fardo.webp" alt="Alambre Fardo"></div><div class="prod-body"><div class="prod-unit">por kg</div><div class="prod-name">Alambre Fardo</div><div class="prod-price">$7.500</div><div class="prod-efec">Efectivo: $6.375</div><button class="prod-btn" onclick="wpp('Alambre Fardo')">Consultar</button></div></div>
+    </div>
+    <div id="hierros-list" style="display:none;overflow-x:auto;">
+      <table class="prod-table">
+        <thead><tr><th>Producto</th><th>Unidad</th><th>Precio c/IVA</th><th>Efectivo (−15%)</th></tr></thead>
+        <tbody>
+          <tr><td>Varilla Hierro 4.2 mm</td><td class="unit">Unidad</td><td class="price">$4.000</td><td class="efec">$3.400</td></tr>
+          <tr><td>Varilla Hierro 6 mm</td><td class="unit">Unidad</td><td class="price">$6.700</td><td class="efec">$5.695</td></tr>
+          <tr><td>Varilla Hierro 8 mm</td><td class="unit">Unidad</td><td class="price">$12.000</td><td class="efec">$10.200</td></tr>
+          <tr><td>Varilla Hierro 10 mm</td><td class="unit">Unidad</td><td class="price">$19.000</td><td class="efec">$16.150</td></tr>
+          <tr><td>Varilla Hierro 12 mm</td><td class="unit">Unidad</td><td class="price">$27.000</td><td class="efec">$22.950</td></tr>
+          <tr><td>Malla 4.2 — 5×2 mts</td><td class="unit">Unidad</td><td class="price">$26.000</td><td class="efec">$22.100</td></tr>
+          <tr><td>Malla 4.2 — 3×2 mts 15×25</td><td class="unit">Unidad</td><td class="price">$21.000</td><td class="efec">$17.850</td></tr>
+          <tr><td>Malla 5 — 5×2 mts 15×25</td><td class="unit">Unidad</td><td class="price">$48.000</td><td class="efec">$40.800</td></tr>
+          <tr><td>Alambre Fardo</td><td class="unit">Kg</td><td class="price">$7.500</td><td class="efec">$6.375</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── IMPERMEABILIZANTES ── -->
+  <section class="section" id="impermeabilizantes">
+    <div class="section-head"><h2 class="section-title">Impermeabilizantes</h2></div>
+    <div id="impermeabilizantes-grid" class="prod-grid">
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/Cerecita 20 kg.webp" alt="Ceresita 20kg"></div><div class="prod-body"><div class="prod-unit">por kg</div><div class="prod-name">Ceresita x 20 kg</div><div class="prod-price">$40.000</div><div class="prod-efec">Efectivo: $34.000</div><button class="prod-btn" onclick="wpp('Ceresita 20kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/cerecita 10kg.webp" alt="Ceresita 10kg"></div><div class="prod-body"><div class="prod-unit">por kg</div><div class="prod-name">Ceresita x 10 kg</div><div class="prod-price">$23.000</div><div class="prod-efec">Efectivo: $19.550</div><button class="prod-btn" onclick="wpp('Ceresita 10kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/Cerecita 4 kg.webp" alt="Ceresita 4kg"></div><div class="prod-body"><div class="prod-unit">por kg</div><div class="prod-name">Ceresita x 4 kg</div><div class="prod-price">$12.000</div><div class="prod-efec">Efectivo: $10.200</div><button class="prod-btn" onclick="wpp('Ceresita 4kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/cerecita 1kg.webp" alt="Ceresita 1kg"></div><div class="prod-body"><div class="prod-unit">por kg</div><div class="prod-name">Ceresita x 1 kg</div><div class="prod-price">$4.500</div><div class="prod-efec">Efectivo: $3.825</div><button class="prod-btn" onclick="wpp('Ceresita 1kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/tacuru 10.webp" alt="Tacurú 10kg"></div><div class="prod-body"><div class="prod-unit">por kg</div><div class="prod-name">Tacurú x 10 kg</div><div class="prod-price">$89.000</div><div class="prod-efec">Efectivo: $75.650</div><button class="prod-btn" onclick="wpp('Tacurú 10kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/tacuru 4.webp" alt="Tacurú 4kg"></div><div class="prod-body"><div class="prod-unit">por kg</div><div class="prod-name">Tacurú x 4 kg</div><div class="prod-price">$38.000</div><div class="prod-efec">Efectivo: $32.300</div><button class="prod-btn" onclick="wpp('Tacurú 4kg')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/tacuru 1.webp" alt="Tacurú 1kg"></div><div class="prod-body"><div class="prod-unit">por kg</div><div class="prod-name">Tacurú x 1 kg</div><div class="prod-price">$12.000</div><div class="prod-efec">Efectivo: $10.200</div><button class="prod-btn" onclick="wpp('Tacurú 1kg')">Consultar</button></div></div>
+    </div>
+  </section>
+
+  <!-- ── CLAVOS ── -->
+  <section class="section" id="clavos">
+    <div class="section-head"><h2 class="section-title">Clavos</h2></div>
+    <div class="prod-grid">
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/clavos 1.webp" alt="Clavos 3"></div><div class="prod-body"><div class="prod-unit">por kg</div><div class="prod-name">Clavos 3"</div><div class="prod-price">$8.000</div><div class="prod-efec">Efectivo: $6.800</div><button class="prod-btn" onclick="wpp('Clavos 3 pulgadas')">Consultar</button></div></div>
+      <div class="prod-card"><div class="prod-thumb"><img src="imágenes/clavos 2.webp" alt="Clavos 4"></div><div class="prod-body"><div class="prod-unit">por kg</div><div class="prod-name">Clavos 4"</div><div class="prod-price">$8.500</div><div class="prod-efec">Efectivo: $7.225</div><button class="prod-btn" onclick="wpp('Clavos 4 pulgadas')">Consultar</button></div></div>
+    </div>
+  </section>
+
+  <!-- ── VIGAS ── -->
+  <section class="section" id="vigas">
+    <div class="section-head"><h2 class="section-title">Vigas Pretensadas</h2></div>
+    <div style="overflow-x:auto;">
+      <table class="prod-table">
+        <thead><tr><th>Longitud</th><th>Unidad</th><th>Precio c/IVA</th><th>Efectivo (−15%)</th></tr></thead>
+        <tbody>
+          <tr><td>Viga 1.00 m a 2.80 m</td><td class="unit">Metro</td><td class="price">$4.300</td><td class="efec">$3.655</td></tr>
+          <tr><td>Viga 3.00 m a 3.20 m</td><td class="unit">Metro</td><td class="price">$4.600</td><td class="efec">$3.910</td></tr>
+          <tr><td>Viga 3.40 m a 3.60 m</td><td class="unit">Metro</td><td class="price">$5.000</td><td class="efec">$4.250</td></tr>
+          <tr><td>Viga 4.00 m a 4.40 m</td><td class="unit">Metro</td><td class="price">$5.300</td><td class="efec">$4.505</td></tr>
+          <tr><td>Viga 4.60 m a 4.50 m</td><td class="unit">Metro</td><td class="price">$5.700</td><td class="efec">$4.845</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div><!-- /main -->
+
+<!-- MARCAS -->
+<div class="marcas-section">
+  <div class="marcas-inner">
+    <div class="section-head" style="border-color:var(--gris-border);">
+      <h2 class="section-title">Marcas que trabajamos</h2>
+    </div>
+    <div class="marcas-grid">
+      <div class="marca-pill">Weber</div>
+      <div class="marca-pill">Acindar</div>
+      <div class="marca-pill">Durlock</div>
+      <div class="marca-pill">Ferrum</div>
+      <div class="marca-pill">Klaukol</div>
+      <div class="marca-pill">FV</div>
+      <div class="marca-pill">Isover</div>
+      <div class="marca-pill">Barbieri</div>
+      <div class="marca-pill">Eternit</div>
+      <div class="marca-pill">Cerro Negro</div>
+      <div class="marca-pill">Cementos Avellaneda</div>
+      <div class="marca-pill">Alberdi</div>
+      <div class="marca-pill">Tuyango</div>
+      <div class="marca-pill">Sinteplast</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACTO + COTIZACIÓN -->
+<div class="contacto-section" id="contacto">
+  <div class="contacto-inner">
+    <div>
+      <h2 class="section-title" style="margin-bottom:1rem;">Ubicación y contacto</h2>
+      <div style="display:grid;gap:10px;">
+        <div class="contacto-card">
+          <div class="contacto-label">Dirección</div>
+          <div class="contacto-val">Hipólito Yrigoyen 1822, Merlo Norte<br>Buenos Aires, Argentina</div>
+        </div>
+        <div class="contacto-card">
+          <div class="contacto-label">Horarios de atención</div>
+          <div class="contacto-val">Lunes a Viernes: 8:00 — 17:00 hs<br>Sábados: 8:00 — 13:00 hs</div>
+        </div>
+        <div class="contacto-card">
+          <div class="contacto-label">Medios de pago</div>
+          <div class="contacto-val">Efectivo · Transferencia · Tarjeta<br><strong style="color:var(--rojo);">15% descuento en efectivo</strong></div>
+        </div>
+      </div>
+      <a href="https://wa.me/5491164792794" class="wpp-block" target="_blank">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.555 9.555 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.523 5.845L.057 23.428a.5.5 0 00.614.614l5.556-1.461A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.515-5.228-1.411l-.374-.22-3.896 1.024 1.03-3.788-.242-.392A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        <div class="wpp-block-text">
+          <div class="title">Escribinos por WhatsApp</div>
+          <div class="sub">Respondemos al instante — consultas, pedidos y cotizaciones</div>
+        </div>
+      </a>
+    </div>
+    <div id="cotizacion">
+      <div class="cotizacion-form">
+        <div class="form-title">Pedí tu cotización</div>
+        <div class="form-sub">Completá el formulario y te respondemos a la brevedad</div>
+        <div class="form-row">
+          <input class="form-input" type="text" placeholder="Nombre y apellido">
+          <input class="form-input" type="tel" placeholder="Teléfono / WhatsApp">
+        </div>
+        <div class="form-row">
+          <input class="form-input" type="text" placeholder="Localidad">
+          <select class="form-input" style="color:rgba(255,255,255,.5);">
+            <option value="" disabled selected>Tipo de cliente</option>
+            <option>Particular</option>
+            <option>Contratista</option>
+            <option>Constructora</option>
+          </select>
+        </div>
+        <textarea class="form-textarea" placeholder="¿Qué materiales necesitás? Describí el tipo y cantidad aproximada..."></textarea>
+        <button class="form-submit" onclick="enviarCotizacion()">Enviar solicitud de cotización</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">GRUPO <span>SANTARSIERE</span></div>
+      <div class="footer-desc">Corralón de materiales de construcción en Merlo Norte, GBA Oeste. Atendemos particulares, contratistas y constructoras con stock permanente y precios actualizados.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Categorías</div>
+      <ul class="footer-links">
+        <li><a href="#aridos">Áridos</a></li>
+        <li><a href="#bolsas">Bolsas</a></li>
+        <li><a href="#ladrillos">Ladrillos y Huecos</a></li>
+        <li><a href="#hierros">Hierros y Mallas</a></li>
+        <li><a href="#impermeabilizantes">Impermeabilizantes</a></li>
+        <li><a href="#vigas">Vigas Pretensadas</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Información</div>
+      <ul class="footer-links">
+        <li><a href="#contacto">Ubicación y horarios</a></li>
+        <li><a href="#cotizacion">Pedir cotización</a></li>
+        <li><a href="https://wa.me/5491164792794">WhatsApp</a></li>
+        <li><a href="#">gruposantarsiere.com.ar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Grupo Santarsiere — Todos los derechos reservados · Merlo Norte, Buenos Aires</div>
+    <div class="footer-copy">Precios con IVA incluido · 15% dto. en efectivo</div>
+  </div>
+</footer>
+
+<script>
+function setVista(seccion, tipo, btn) {
+  const grid = document.getElementById(seccion+'-grid');
+  const list = document.getElementById(seccion+'-list');
+  const btns = btn.parentElement.querySelectorAll('.vista-btn');
+  btns.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if(tipo === 'grid'){ grid.style.display='grid'; list.style.display='none'; }
+  else { grid.style.display='none'; list.style.display='block'; }
+}
+
+function wpp(producto) {
+  const msg = encodeURIComponent('Hola! Quería consultar precio y disponibilidad de: ' + producto);
+  window.open('https://wa.me/5491164792794?text=' + msg, '_blank');
+}
+
+function buscar() {
+  const q = document.getElementById('search-input').value.toLowerCase().trim();
+  if(!q) return;
+  const cards = document.querySelectorAll('.prod-card');
+  let encontrado = false;
+  cards.forEach(c => {
+    const nombre = c.querySelector('.prod-name')?.textContent.toLowerCase() || '';
+    const cat = c.querySelector('.prod-unit')?.textContent.toLowerCase() || '';
+    if(nombre.includes(q) || cat.includes(q)){
+      c.style.border = '2px solid #D85A30';
+      if(!encontrado){ c.scrollIntoView({behavior:'smooth', block:'center'}); encontrado = true; }
+    } else {
+      c.style.border = '';
+    }
+  });
+  if(!encontrado) alert('No encontramos "' + q + '". Podés consultarnos por WhatsApp.');
+}
+
+document.getElementById('search-input').addEventListener('keypress', function(e){
+  if(e.key === 'Enter') buscar();
+});
+
+function enviarCotizacion() {
+  const nombre = document.querySelector('.cotizacion-form input[type="text"]').value;
+  const tel = document.querySelector('.cotizacion-form input[type="tel"]').value;
+  const detalle = document.querySelector('.cotizacion-form textarea').value;
+  if(!nombre || !tel || !detalle){ alert('Por favor completá todos los campos.'); return; }
+  const msg = encodeURIComponent('*Solicitud de cotización*\n\nNombre: ' + nombre + '\nTeléfono: ' + tel + '\n\nDetalle: ' + detalle);
+  window.open('https://wa.me/5491164792794?text=' + msg, '_blank');
+}
+</script>
+</body>
+</html>
